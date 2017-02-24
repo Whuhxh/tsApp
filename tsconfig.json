@@ -1,12 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2016",
     "module": "commonjs",
     "outDir": "dist",
-    "sourceMap": true
+    "declaration": true,
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "noImplicitThis": false,
+    "allowUnusedLabels": true
   },
   "include": [
-    "src/**/*.ts"
+    "example/**/*.ts",
+    "src/**/*.ts",
+    "test/**/*.spec.ts",
+    "bot/**/*.ts",
+    "robot/**/*.ts"
   ],
   "exclude": [
     "node_modules",
