@@ -26,20 +26,19 @@ export class UserRouter {
      * GET one hero by id
      */
     public async getOne(req: Request, res: Response, next: NextFunction) {
-        let query = parseInt(req.params.id);
-        let user = await User.find({id: query}).exec();
-        if (user) {
+        let query = req.params.id;
+        let user = await User.find({_id: query}).exec();
+        if (user && user.length !== 0) {
             res.status(200)
                 .send({
                     message: 'Success',
                     status: res.status,
                     user
                 });
-        }
-        else {
+        } else {
             res.status(404)
                 .send({
-                    message: 'No hero found with the given id.',
+                    message: 'No user found with the given id.',
                     status: res.status
                 });
         }
